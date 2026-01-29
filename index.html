@@ -7,14 +7,16 @@
   <meta name="description" content="Educational contraception decision-support tool based on clinical guidelines." />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <!-- HEADER -->
   <header class="header">
     <div class="container header-inner">
       <div class="brand">
         <div class="logo" aria-hidden="true">MC</div>
         <div>
           <h1 class="brand-title">MyContraception</h1>
-          <p class="brand-subtitle">Educational decision-support questionnaire (guideline-based)</p>
+          <p class="brand-subtitle">Educational contraception decision-support tool</p>
         </div>
       </div>
 
@@ -24,46 +26,59 @@
     </div>
   </header>
 
+  <!-- MAIN -->
   <main class="container">
-    <section class="hero">
-  <div class="hero-card">
-    <div class="hero-left">
-      <h2 class="hero-title">Find safer contraceptive options — fast.</h2>
-      <p class="hero-text">
-        Answer a short, private questionnaire to see method categories that may fit your situation.
-      </p>
-      <div class="hero-actions">
-        <button class="btn btn-primary" type="button" onclick="document.getElementById('app').scrollIntoView({behavior:'smooth'})">
-          Start questionnaire
-        </button>
-        <span class="hero-chip">Educational • Private • In-browser</span>
-      </div>
-    </div>
-    <div class="hero-right" aria-hidden="true">
-      <div class="hero-orb"></div>
-      <div class="hero-orb orb2"></div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">~2–3 min</div>
-        <div class="hero-stat-txt">to complete</div>
-      </div>
-    </div>
-  </div>
-</section>
 
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="hero-card">
+        <div class="hero-left">
+          <h2 class="hero-title">Find safer contraceptive options — fast.</h2>
+          <p class="hero-text">
+            Answer a short, private questionnaire to explore contraceptive method
+            categories based on established clinical guidelines.
+          </p>
+
+          <div class="hero-actions">
+            <button
+              class="btn btn-primary"
+              type="button"
+              onclick="document.getElementById('app').scrollIntoView({ behavior: 'smooth' })"
+            >
+              Start questionnaire
+            </button>
+            <span class="hero-chip">Educational • Private • In-browser</span>
+          </div>
+        </div>
+
+        <div class="hero-right" aria-hidden="true">
+          <div class="hero-orb"></div>
+          <div class="hero-orb orb2"></div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">~2–3 min</div>
+            <div class="hero-stat-txt">to complete</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DISCLAIMER -->
     <section class="card disclaimer">
       <div class="disclaimer-icon" aria-hidden="true">i</div>
       <div>
         <h2>Important</h2>
         <p>
-          This tool is for <strong>education only</strong>. It does not provide medical advice, diagnosis, or prescriptions.
+          This tool is for <strong>educational purposes only</strong>. It does not provide
+          medical advice, diagnosis, or treatment recommendations.
           Always confirm contraceptive decisions with a qualified health-care professional.
         </p>
         <p class="muted">
-          Reminder: Hormonal methods do <strong>not</strong> protect against STIs — condoms may be needed for STI protection.
+          Note: Hormonal contraceptives do <strong>not</strong> protect against sexually transmitted infections (STIs).
         </p>
       </div>
     </section>
 
+    <!-- QUESTIONNAIRE -->
     <section class="card">
       <div class="progress-wrap">
         <div class="progress-top">
@@ -76,16 +91,25 @@
       </div>
 
       <div id="app">
-        <!-- Questionnaire renders here -->
+        <!-- Questionnaire renders here via script.js -->
       </div>
     </section>
 
+    <!-- RESULTS -->
     <section class="card results" id="resultsCard" hidden>
       <div class="results-header">
         <h2>Your results</h2>
         <p class="muted">
-          Categories are shown as <strong>Recommended</strong>, <strong>Caution</strong>, or <strong>Avoid</strong> based on your answers.
+          Contraceptive method categories are shown as
+          <strong>Recommended</strong>, <strong>Caution</strong>, or <strong>Avoid</strong>
+          based on your answers.
         </p>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
+          <button class="btn" type="button" onclick="window.print()">
+            Print / Save as PDF
+          </button>
+        </div>
       </div>
 
       <div class="pill-row" id="summaryPills"></div>
@@ -108,16 +132,19 @@
       </div>
 
       <div class="footer-note">
-        <h4>Next best step</h4>
+        <h4>Next step</h4>
         <p class="muted">
-          Take a screenshot of these results and discuss them with your clinician/pharmacist to choose a final method and confirm safety.
+          Discuss these results with your clinician or pharmacist to confirm eligibility
+          and select the most appropriate contraceptive method.
         </p>
       </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="footer muted">
-      Built for education • Privacy-friendly (runs in the browser) • v1
+      Built for education • Privacy-friendly • Based on clinical guidelines
     </footer>
+
   </main>
 
   <script src="script.js"></script>
