@@ -3,25 +3,96 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ContraceptGuide</title>
+  <title>MyContraception</title>
+  <meta name="description" content="Educational contraception decision-support tool based on clinical guidelines." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header style="padding:20px;text-align:center;">
-    <h1>ContraceptGuide</h1>
-    <p>An educational contraception decision-support tool</p>
+  <header class="header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">MC</div>
+        <div>
+          <h1 class="brand-title">MyContraception</h1>
+          <p class="brand-subtitle">Educational decision-support questionnaire (guideline-based)</p>
+        </div>
+      </div>
+
+      <button id="resetBtn" class="btn btn-ghost" type="button" title="Reset questionnaire">
+        Reset
+      </button>
+    </div>
   </header>
 
-  <main style="max-width:800px;margin:auto;padding:20px;">
-    <p>
-      ContraceptGuide helps users explore contraceptive options based on
-      established clinical guidelines. This tool is for educational purposes
-      only and does not replace professional medical advice.
-    </p>
+  <main class="container">
+    <section class="card disclaimer">
+      <div class="disclaimer-icon" aria-hidden="true">i</div>
+      <div>
+        <h2>Important</h2>
+        <p>
+          This tool is for <strong>education only</strong>. It does not provide medical advice, diagnosis, or prescriptions.
+          Always confirm contraceptive decisions with a qualified health-care professional.
+        </p>
+        <p class="muted">
+          Reminder: Hormonal methods do <strong>not</strong> protect against STIs — condoms may be needed for STI protection.
+        </p>
+      </div>
+    </section>
 
-    <button onclick="alert('Website is working 🎉')" style="padding:10px 20px;">
-      Test Button
-    </button>
+    <section class="card">
+      <div class="progress-wrap">
+        <div class="progress-top">
+          <div class="muted" id="progressText">Question 1 of …</div>
+          <div class="muted" id="progressPercent">0%</div>
+        </div>
+        <div class="progress">
+          <div class="progress-bar" id="progressBar" style="width:0%"></div>
+        </div>
+      </div>
+
+      <div id="app">
+        <!-- Questionnaire renders here -->
+      </div>
+    </section>
+
+    <section class="card results" id="resultsCard" hidden>
+      <div class="results-header">
+        <h2>Your results</h2>
+        <p class="muted">
+          Categories are shown as <strong>Recommended</strong>, <strong>Caution</strong>, or <strong>Avoid</strong> based on your answers.
+        </p>
+      </div>
+
+      <div class="pill-row" id="summaryPills"></div>
+
+      <div class="grid-3">
+        <div class="result-col">
+          <h3 class="badge badge-good">✅ Recommended</h3>
+          <div id="recommendedList" class="stack"></div>
+        </div>
+
+        <div class="result-col">
+          <h3 class="badge badge-warn">⚠️ Caution</h3>
+          <div id="cautionList" class="stack"></div>
+        </div>
+
+        <div class="result-col">
+          <h3 class="badge badge-bad">❌ Avoid</h3>
+          <div id="avoidList" class="stack"></div>
+        </div>
+      </div>
+
+      <div class="footer-note">
+        <h4>Next best step</h4>
+        <p class="muted">
+          Take a screenshot of these results and discuss them with your clinician/pharmacist to choose a final method and confirm safety.
+        </p>
+      </div>
+    </section>
+
+    <footer class="footer muted">
+      Built for education • Privacy-friendly (runs in the browser) • v1
+    </footer>
   </main>
 
   <script src="script.js"></script>
